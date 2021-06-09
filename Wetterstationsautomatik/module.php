@@ -205,6 +205,7 @@ class Wetterstationsautomatik extends IPSModule
         
         if ($Windsensor) {
             if($wurzelLetzterWert < $eingestellterDelta) {
+                SetValue($this->GetIDForIdent("WindLetzterWert", $WindsensorWert));
                 if ($WindsensorWert >= $WindSollOben) {
                     SetValue($this->GetIDForIdent("Windstatus"), true);
                 } elseif ($WindsensorWert <= $WindSollUnten) {
