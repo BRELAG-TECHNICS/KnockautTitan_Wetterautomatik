@@ -195,7 +195,7 @@ class Wetterstationsautomatik extends IPSModule
         $WindSollOben = GetValue($this->GetIDForIdent("WindSollOben"));
         $WindSollUnten = GetValue($this->GetIDForIdent("WindSollUnten"));
         $Beschattung = GetValue($this->GetIDForIdent("BeschattungWiederholen"));
-        $eingestellterDelta = GetValue($this->ReadPropertyInteger("Delta"));
+        $eingestellterDelta = $this->ReadPropertyInteger("Delta");
         $letzterWert = GetValue($this->GetIDForIdent("WindLetzterWert"));
 
         $windDifferenz = $WindsensorWert - $letzterWert;
